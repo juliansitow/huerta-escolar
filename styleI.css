@@ -1,0 +1,221 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
+@import url('https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css');
+
+/* Reseteo básico y fuente */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif; /* Usamos Montserrat para una estética moderna */
+}
+
+/* Estilos para el cuerpo de la página */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Asegura que ocupe al menos el alto de la ventana */
+    background-color: #222; /* Fondo oscuro sólido */
+    color: #fff; /* Color de texto predeterminado para el body */
+    overflow: hidden; /* Evita barras de desplazamiento si hay efectos fuera de pantalla */
+}
+
+/* Contenedor principal del formulario */
+.wrapper {
+    position: relative;
+    width: 400px; /* Ancho fijo para el formulario */
+    background-color: rgba(30, 30, 30, 0.9); /* Fondo oscuro con ligera transparencia para el formulario */
+    padding: 45px 40px; /* Relleno interno */
+    border-radius: 15px; /* Bordes redondeados */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); /* Sombra para dar profundidad */
+    backdrop-filter: blur(10px); /* Efecto de desenfoque detrás del formulario (Glassmorphism sutil) */
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Borde blanco muy sutil y transparente */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Transiciones suaves para interactividad */
+}
+
+.wrapper:hover {
+    transform: translateY(-5px); /* Se levanta ligeramente al pasar el ratón */
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6); /* Sombra más grande al pasar el ratón */
+}
+
+/* Título del formulario */
+h2 {
+    text-align: center;
+    color: #eee; /* Título en un gris muy claro */
+    margin-bottom: 30px;
+    font-weight: 700;
+    font-size: 28px;
+    letter-spacing: 0.5px;
+}
+
+/* Grupo de input (para el campo de usuario) */
+.input-group {
+    position: relative;
+    margin-bottom: 25px;
+}
+
+label {
+    font-weight: 600;
+    color: #bbb; /* Etiquetas en gris claro */
+    display: block;
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+input#username {
+    width: 100%;
+    padding: 12px 40px 12px 15px; /* Ajuste de padding para el icono */
+    border-radius: 8px; /* Bordes redondeados del input */
+    border: 1.5px solid #555; /* Borde gris oscuro */
+    font-size: 16px;
+    color: #eee; /* Texto del input en gris muy claro */
+    background-color: #333; /* Fondo oscuro del input */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+input#username:focus {
+    outline: none; /* Quita el contorno por defecto al enfocar */
+    border-color: #888; /* Borde más claro al enfocar */
+    box-shadow: 0 0 5px rgba(136, 136, 136, 0.3); /* Sombra sutil al enfocar */
+    background-color: #444; /* Fondo un poco más claro al enfocar */
+}
+
+.input-group .bx {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+    color: #777; /* Color del icono en gris */
+    pointer-events: none; /* Asegura que el icono no bloquee la interacción con el input */
+}
+
+/* Sección de "Recordarme" y "¿Olvidaste la contraseña?" */
+.remember-forgot {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    margin-top: -10px; /* Ajuste de margen para acercar a los inputs */
+    margin-bottom: 25px;
+    color: #999;
+}
+
+.remember-forgot label {
+    display: inline-flex; /* Permite alinear el texto con el checkbox */
+    align-items: center;
+    cursor: pointer;
+    color: #999;
+    font-weight: normal; /* Sobrescribe el font-weight global de label */
+}
+
+.remember-forgot label input {
+    width: 16px;
+    height: 16px;
+    margin-right: 5px;
+    accent-color: #777; /* Color del tick del checkbox (si el navegador lo soporta) */
+    background-color: #444; /* Fondo del checkbox */
+    border-radius: 3px;
+}
+
+.remember-forgot a {
+    color: #777; /* Enlace en gris */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.remember-forgot a:hover {
+    color: #bbb; /* Enlace más claro al pasar el ratón */
+    text-decoration: underline;
+}
+
+/* Botón de Iniciar Sesión */
+.submit-btn {
+    width: 100%;
+    background-color: #555; /* Botón en gris oscuro */
+    color: white;
+    border: none;
+    padding: 14px 0;
+    font-size: 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    letter-spacing: 0.8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4); /* Sombra para el botón */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #777; /* Botón gris más claro al pasar el ratón */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5); /* Sombra más pronunciada al pasar el ratón */
+}
+
+/* Enlace de Registro */
+.register-link {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+    color: #999;
+}
+
+.register-link p a {
+    color: #777; /* Enlace de registro en gris */
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.register-link p a:hover {
+    color: #bbb;
+    text-decoration: underline;
+}
+
+/* Estilos para mensajes (error/éxito - si los implementas con JS) */
+.mensaje {
+    padding: 12px;
+    margin-top: 20px;
+    border-radius: 6px;
+    text-align: center;
+    font-weight: 500;
+    font-size: 14px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    opacity: 0; /* Oculto por defecto */
+    transform: translateY(10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.mensaje.show {
+    opacity: 1; /* Muestra el mensaje */
+    transform: translateY(0);
+}
+
+.mensaje.error {
+    background-color: #ffe0e0; /* Fondo rojo claro */
+    color: #c0392b; /* Texto rojo oscuro */
+    border: 1px solid #e74c3c;
+}
+
+.mensaje.success {
+    background-color: #e6ffe6; /* Fondo verde claro */
+    color: #27ae60; /* Texto verde oscuro */
+    border: 1px solid #2ecc71;
+}
+
+/* Media Queries para Responsividad Básica (ajustes para pantallas pequeñas) */
+@media (max-width: 500px) {
+    .wrapper {
+        width: 90%; /* Hace el formulario más angosto en pantallas pequeñas */
+        padding: 30px 25px; /* Reduce el padding */
+    }
+    h2 {
+        font-size: 24px; /* Reduce el tamaño del título */
+    }
+    input#username {
+        font-size: 15px;
+        padding: 10px 35px 10px 12px; /* Ajusta el padding del input */
+    }
+    .submit-btn {
+        font-size: 16px;
+        padding: 12px 0;
+    }
+}

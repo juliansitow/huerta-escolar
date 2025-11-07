@@ -1,0 +1,293 @@
+/* --- Estilos Globales y Reset --- */
+body {
+    margin: 0;
+    font-family: 'Oswald', Arial, sans-serif;
+    color: #333;
+    background-color: #f0f8ec;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* --- Header y Navegación --- */
+header {
+    background-color: #1b471d;
+    padding: 5px 0;
+    border-bottom: 1px solid #eee;
+}
+
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.Imagenes {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-huerta, .logo-escudo {
+    height: 65px;
+}
+
+.logo-sena {
+    height: 50px;
+    margin-left: 15px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+}
+
+.nav-links a {
+    color: #fffafa;
+    font-weight: bold;
+    font-size: 1em;
+    padding-bottom: 5px;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #4CAF50;
+    background-color: transparent !important;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background-color: #4CAF50;
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+/* ==============================================
+   --- Sección Hero (CÓDIGO FINAL Y LIMPIO) --- 
+   ============================================== */
+.hero-section {
+    position: relative;
+    text-align: center;
+    padding: 100px 20px;
+    
+    /* 1. EFECTO GRIS + TU NUEVA IMAGEN DE FONDO */
+    /* (Asegúrate de que 'fondo.jpg' esté en la carpeta 'Imagenes') */
+    background: 
+        linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+        url('Imagenes/fondo.jpg') no-repeat center center / cover;
+    
+    /* 2. TEXTO BLANCO (¡Ahora sí funcionará!) */
+    color: #ffffff; 
+    
+    min-height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-content h1 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 3.8em;
+    margin-bottom: 20px;
+    
+    /* 3. SOMBRA para que el texto resalte */
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
+}
+
+.hero-content p {
+    font-size: 1.4em;
+    max-width: 700px;
+    margin: 0 auto 40px auto;
+    line-height: 1.6;
+    
+    /* 3. SOMBRA para que el texto resalte */
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
+}
+
+.btn-donate {
+    background-color: #4CAF50;
+    color: white;
+    padding: 18px 40px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.3em;
+    font-weight: bold;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 8px rgba(0, 128, 0, 0.3);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: inline-block;
+}
+
+.btn-donate:hover {
+    background-color: #5cb85c;
+    transform: translateY(-3px);
+}
+
+/* --- Sección Productos del Mes --- */
+.productos-mes-section {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: #e6ffe6;
+}
+
+.productos-mes-section h2 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 2.8em;
+    color: #2E7D32;
+    margin-bottom: 50px;
+}
+
+.productos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.producto-card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    padding: 25px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.producto-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+.producto-card img {
+    max-width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.producto-card h3 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.8em;
+    color: #2E7D32;
+    margin-bottom: 10px;
+}
+
+.producto-card p {
+    font-size: 1.1em;
+    color: #555;
+    margin-bottom: 15px;
+    flex-grow: 1;
+}
+
+.producto-card .precio {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #4CAF50;
+}
+
+/* --- Footer --- */
+footer {
+    background-color: #3a3a3a;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    font-size: 0.9em;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #4CAF50;
+}
+
+footer span {
+    color: #666;
+}
+
+/* --- Carrito --- */
+.cart-icon {
+    font-size: 1.5em;
+    color: white;
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+}
+
+.cart-counter-badge {
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    padding: 2px 6px;
+    font-size: 0.7em;
+    position: absolute;
+    top: -5px;
+    right: -10px;
+    line-height: 1;
+}
+
+/* Media Queries para responsividad */
+@media (max-width: 768px) {
+    header nav {
+        flex-direction: column;
+        gap: 10px;
+        padding: 10px;
+    }
+
+    .Imagenes, .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .nav-links {
+        gap: 15px;
+    }
+
+    .logo-sena {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+
+    .hero-content h1 {
+        font-size: 2.5em;
+    }
+
+    .hero-content p {
+        font-size: 1.1em;
+    }
+
+    .productos-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* NOTA: He eliminado todo el código duplicado y en 
+   conflicto que tenías al final de este archivo.
+*/

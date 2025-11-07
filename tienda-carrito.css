@@ -1,0 +1,310 @@
+:root { 
+    --pastel-pink: #e6ffe6; /* Verde pastel */
+    --soft-pink: #f0fff0; /* Verde muy suave */
+    --dark-pink: #4CAF50; /* Verde principal */
+    --text-color: #333333; 
+    --gold-accent: #1B5E20; /* Verde oscuro */
+    --white-color: #FFFFFF; 
+    --primary-font: 'Oswald', sans-serif; 
+    --secondary-font: 'Oswald', sans-serif; 
+} 
+
+.container { 
+    width: 90%; 
+    max-width: 1200px; 
+    margin: 0 auto; 
+} 
+
+.section { 
+    padding: 4rem 0; 
+} 
+
+.section-title {
+    font-family: var(--primary-font);
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 3rem;
+    color: var(--dark-pink);
+}
+
+.btn-primary { 
+    background-color: var(--dark-pink); 
+    color: var(--white-color); 
+    padding: 12px 25px; 
+    text-decoration: none; 
+    border-radius: 25px; 
+    font-weight: 700; 
+    transition: background-color 0.3s ease; 
+    border: none; 
+    cursor: pointer; 
+    font-family: var(--secondary-font);
+} 
+
+.btn-primary:hover { 
+    background-color: var(--gold-accent); 
+} 
+
+/* --- Rejilla de Productos (Copiado de Makilu) --- */ 
+.product-grid { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+    gap: 2rem; 
+} 
+
+.product-card { 
+    background-color: var(--white-color); 
+    border-radius: 15px; 
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08); 
+    text-align: center; 
+    padding: 1.5rem; 
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+} 
+
+.product-card:hover { 
+    transform: translateY(-10px); 
+    box-shadow: 0 8px 25px rgba(76, 175, 80, 0.3); 
+} 
+
+.product-card img { 
+    max-width: 100%; 
+    height: auto;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 10px; 
+    margin-bottom: 1rem; 
+} 
+
+.product-card h3 { 
+    font-family: var(--primary-font); 
+    font-size: 1.5rem; 
+    margin: 0.5rem 0; 
+} 
+
+.price { 
+    color: var(--gold-accent); 
+    font-weight: 700; 
+    font-size: 1.2rem; 
+    margin-bottom: 1rem; 
+} 
+
+/* --- Estilos para el Carrito (Copiado de Makilu) --- */
+.cart-icon {
+    position: relative;
+    font-size: 1.5rem;
+    padding: 0.5rem;
+    color: white;
+    text-decoration: none;
+}
+
+.cart-counter-badge {
+    position: absolute;
+    top: -5px;
+    right: -8px;
+    background-color: var(--dark-pink);
+    color: white;
+    border-radius: 50%;
+    padding: 2px 6px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    font-family: var(--secondary-font);
+    line-height: 1;
+    box-shadow: 0 0 5px rgba(0,0,0,0.3);
+}
+
+.cart-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 200;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s ease, visibility 0s 0.4s;
+}
+
+.cart-modal.is-open {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.4s ease;
+}
+
+.cart-content {
+    background-color: var(--white-color);
+    width: 90%;
+    max-width: 500px;
+    max-height: 90vh;
+    padding: 2.5rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    transform: scale(0.9) translateY(20px);
+    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), opacity 0.4s ease;
+    opacity: 0;
+}
+
+.cart-modal.is-open .cart-content {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+}
+
+.cart-content h2 {
+    font-family: var(--primary-font);
+    color: var(--dark-pink);
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 2rem;
+    font-size: 2.2rem;
+}
+
+.close-cart-button {
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    font-size: 2.5rem;
+    color: var(--text-color);
+    cursor: pointer;
+    line-height: 1;
+    background: none;
+    border: none;
+}
+.close-cart-button:hover {
+    color: var(--dark-pink);
+}
+
+#cart-items-container {
+    flex-grow: 1;
+    overflow-y: auto;
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 1rem;
+}
+
+.cart-item-image {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-right: 1rem;
+    border: 2px solid var(--pastel-pink);
+}
+
+.cart-item-details {
+    flex-grow: 1;
+}
+
+.cart-item-details h4 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.cart-item-price {
+    color: var(--gold-accent);
+    font-weight: 700;
+}
+
+.cart-item-remove-btn {
+    background: none;
+    border: none;
+    color: #aaa;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+.cart-item-remove-btn:hover { color: red; }
+
+.cart-total {
+    text-align: right;
+    font-size: 1.3rem;
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 2px solid var(--dark-pink);
+    font-weight: bold;
+}
+
+.checkout-btn {
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin-top: 1.5rem;
+    box-sizing: border-box;
+    padding: 15px;
+    font-size: 1.1rem;
+}
+
+/* Estilos para la página de Checkout (Copiado de Makilu) */
+.checkout-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: flex-start;
+}
+.checkout-form-container {
+    /* (los estilos se heredan) */
+}
+.contact-form { 
+    max-width: 600px; 
+    margin: 0 auto; 
+    background: var(--white-color); 
+    padding: 2rem; 
+    border-radius: 15px; 
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08); 
+} 
+.form-group { 
+    margin-bottom: 1.5rem; 
+} 
+.form-group label { 
+    display: block; 
+    margin-bottom: 0.5rem; 
+    font-weight: 600; 
+    text-align: left; 
+} 
+.form-group input { 
+    width: 100%; 
+    padding: 12px;
+    border: 1px solid #ddd; 
+    border-radius: 8px;
+    font-family: var(--secondary-font); 
+    font-size: 1rem;
+    box-sizing: border-box;
+} 
+.order-summary-container {
+    background-color: var(--white-color);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+.summary-item {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #eee;
+    padding: 0.5rem 0;
+    font-size: 0.9rem;
+}
+.payment-instructions {
+    background-color: var(--soft-pink); /* Verde suave */
+    border-left: 4px solid var(--dark-pink); /* Verde principal */
+    padding: 1rem;
+    margin-top: 1.5rem;
+    border-radius: 8px;
+    font-size: 0.9rem;
+}
+@media (max-width: 768px) {
+    .checkout-layout {
+        grid-template-columns: 1fr;
+    }
+}

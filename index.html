@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Huerta Escolar - Inicio | Cultivando Futuro en Fosca</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="STILEISS.css">
+    <link rel="stylesheet" href="tienda-carrito.css">
+    
+</head>
+<body>
+
+    <header>
+        <nav>
+            <div class="Imagenes">
+                <img src="Imagenes/LOGO PAGINA.png" alt="Logo Huerta Escolar" class="logo-huerta">
+                <img src="Imagenes/Escudo.webp" alt="Escudo Maria Medina" class="logo-escudo">
+            </div>
+            <div class="nav-links">
+                <a href="index.html">INICIO</a>
+                <a href="tienda.html">TIENDA</a>
+                <a href="servicios.html">SERVICIOS</a>
+                <a href="sobre-la-huerta.html">SOBRE LA HUERTA</a>
+                <a href="contacto.html">CONTACTO</a>
+                <a href="inicio.html">LOGIN</a>
+
+                <a href="#" id="cart-button" class="cart-icon">
+                    🛒
+                    <span id="cart-counter" class="cart-counter-badge">0</span>
+                </a>
+                <img src="Imagenes/Logo sena.jpg" alt="Logo Sena" class="logo-sena">
+            </div>  
+        </nav>
+    </header>
+
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1>🌱 Huerta Escolar de Fosca 🌿</h1>
+            <p>
+                Un espacio vibrante en Fosca, Cundinamarca, dedicado a la sostenibilidad, la educación práctica y el contacto vital con la naturaleza para nuestras futuras generaciones.
+            </p>
+            <a href="contacto.html" class="btn-donate">
+                ¡AYÚDANOS DONANDO!
+            </a>
+        </div>
+    </section>
+
+    <section class="productos-mes-section">
+        <h2>Productos del Mes</h2>
+        <div class="productos-grid">
+            <div class="producto-card">
+                <img src="Imagenes/tomillo.jpg" alt="Tomillo Fresco">
+                <h3>Eneldo Fresco</h3>
+                <p>Aroma fresco y único, perfecto para pescados, salsas y ensaladas.</p>
+                <span class="precio">$2.500 / paquete</span>
+            </div>
+            <div class="producto-card">
+                <img src="Imagenes/laurel.jpg" alt="Hojas de Laurel">
+                <h3>Hojas de Laurel</h3>
+                <p>Un toque herbal esencial para dar sabor a sopas, estofados y guisos.</p>
+                <span class="precio">$2.000 / paquete</span>
+            </div>
+            <div class="producto-card">
+                <img src="Imagenes/romero.jpg" alt="Romero Fresco">
+                <h3>Romero Fresco</h3>
+                <p>Sabor intenso y a pino, perfecto para papas y carnes asadas.</p>
+                <span class="precio">$3.000 / paquete</span>
+            </div>
+        </div>
+    </section>
+
+    <div id="cart-modal" class="cart-modal">
+        <div class="cart-content">
+            <span class="close-cart-button">&times;</span>
+            <h2>Tu Carrito</h2>
+            <div id="cart-items-container"></div>
+            <div class="cart-total">
+                <strong>Total:</strong> <span id="cart-total-price">$0</span>
+            </div>
+            <a href="checkout.html" class="btn-primary checkout-btn">Finalizar Compra</a>
+        </div>
+    </div>
+    
+    <footer>
+        <p>© 2025 Huerta Escolar de Fosca, Cundinamarca | Todos los derechos reservados</p>
+        <div>
+            <a href="#">Política de Privacidad</a>
+            <span>|</span>
+            <a href="#">Términos de Servicio</a>
+        </div>
+    </footer>
+
+    <script src="carrito.js"></script>
+    <script src="tienda.js"></script> 
+
+</body>
+</html>

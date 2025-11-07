@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finalizar Compra - Huerta Escolar</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="STILEISS.css">
+    
+    <link rel="stylesheet" href="tienda-carrito.css">
+</head>
+<body>
+
+    <header style="background-color: #3a3a3a; padding: 10px 0; border-bottom: 1px solid #eee;">
+        <nav style="display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; padding: 0 20px;">
+            <div class="Imagenes">
+                <img src="Imagenes/LOGO PAGINA.png" alt="Logo Huerta Escolar" style="height: 60px;">
+            </div>
+            <div style="display: flex; gap: 40px; align-items: center;">
+                <a href="index.html" style="text-decoration: none; color: #fffafa; font-weight: bold; font-size: 1.1em;">INICIO</a>
+                <a href="tienda.html" style="text-decoration: none; color: #4CAF50; font-weight: bold; font-size: 1.1em;">TIENDA</a>
+                <a href="servicios.html" style="text-decoration: none; color: #ffffff; font-weight: bold; font-size: 1.1em;">SERVICIOS</a>
+                <a href="sobre-la-huerta.html" style="text-decoration: none; color: #ffffff; font-weight: bold; font-size: 1.1em;">SOBRE LA HUERTA</a>
+                <a href="contacto.html" style="text-decoration: none; color: #ffffff; font-weight: bold; font-size: 1.1em;">CONTACTO</a>
+                <a href="#" id="cart-button" class="cart-icon">
+                    🛒
+                    <span id="cart-counter" class="cart-counter-badge">0</span>
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section id="checkout-page" class="section">
+            <h2 class="section-title" style="color: #1B5E20; font-family: 'Oswald', sans-serif;">Casi listo, ¡finaliza tu pedido!</h2>
+            
+            <div class="checkout-layout">
+                <div class="checkout-form-container">
+                    <h3>Tus Datos de Envío</h3>
+                    <form id="checkout-form" class="contact-form" style="margin: 0;">
+                        <div class="form-group">
+                            <label for="name">Nombres</label>
+                            <input type="text" id="name" required>
+                        </div>
+                         <div class="form-group">
+                            <label for="lastname">Apellidos</label>
+                            <input type="text" id="lastname" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="cedula">Cédula</label>
+                            <input type="text" id="cedula" required>
+                        </div>
+                         <div class="form-group">
+                            <label for="city">Ciudad/Municipio</label>
+                            <input type="text" id="city" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="address">Dirección (Barrio, apto, etc.)</label>
+                            <input type="text" id="address" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Número de Celular (Nequi)</label>
+                            <input type="tel" id="phone" required>
+                        </div>
+                        <button type="submit" class="btn-primary" style="width: 100%;">Hacer Pedido por WhatsApp</button>
+                    </form>
+                </div>
+                <div class="order-summary-container">
+                    <h3>Resumen de tu Pedido</h3>
+                    <div id="order-summary-items"></div>
+                    <div class="cart-total" style="font-size: 1.3rem;">
+                        <strong>Total a Pagar:</strong> <span id="summary-total-price">$0</span>
+                    </div>
+                    <div class="payment-instructions">
+                        <p>Al hacer tu pedido por WhatsApp, te daremos nuestro número de <strong>Nequi</strong> para que completes el pago.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="cart-modal" class="cart-modal">
+        <div class="cart-content">
+            <span class="close-cart-button">&times;</span>
+            <h2>Tu Carrito</h2>
+            <div id="cart-items-container"></div>
+            <div class="cart-total">
+                <strong>Total:</strong> <span id="cart-total-price">$0</span>
+            </div>
+            <a href="checkout.html" class="btn-primary checkout-btn">Finalizar Compra</a>
+        </div>
+    </div>
+    
+   <footer style="background-color: #3a3a3a; color: white; text-align: center; padding: 10px 0px; font-size: 0.9em; margin-top: 4rem;">
+        <p style="margin: 0;">© 2025 Huerta Escolar de Fosca, Cundinamarca | Todos los derechos reservados</p>
+   </footer>
+
+    <script src="carrito.js"></script>
+    <script src="checkout.js"></script>
+
+</body>
+</html>
